@@ -136,8 +136,17 @@ var randomNumber = function(min, max) {
     return value;
 };
 
+var getPlayerName = function() {
+    var name = "";
+    while (name === "" || name === null) {
+        name = prompt("What is your robot's name?")
+    }
+    console.log("Your robot's name is " + name);
+    return name;
+};
+
 var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
@@ -156,7 +165,7 @@ var playerInfo = {
             window.alert("You don't have enough money!");
           }
     },
-    upgradAttack: function() {
+    upgradeAttack: function() {
         if (this.money >= 7) {
             window.alert("Upgrading player's attack by 6 for 7 dollars.");
             this.attack += 6;
@@ -181,5 +190,6 @@ var enemyInfo = [
         attack: randomNumber(10, 14)
     }
 ];
+
 // start the game when the page loads 
 startGame();
