@@ -131,9 +131,9 @@ var endGame = function () {
     }
 };
 var shop = function() {
-    var shopOptionPrompt = window.prompt("Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 1 for REFILL, 2 for UPGRADE, or 3 for LEAVE.");
+    var shopOptionPrompt = +window.prompt("Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 1 for REFILL, 2 for UPGRADE, or 3 for LEAVE.");
     // use switch to carry out action
-    parseInt(shopOptionPrompt);
+    
 switch (shopOptionPrompt) {
     case 1:
      playerInfo.refillHealth();
